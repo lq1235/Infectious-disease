@@ -1,2 +1,2 @@
-# adaptive-network-disease-model
+# Disease prediction
 simulation code
