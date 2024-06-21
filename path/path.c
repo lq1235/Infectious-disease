@@ -19,7 +19,7 @@ double diff[Dim][Dim],invd[Dim][Dim],invdx[Dim][Dim][Dim];
 double e_eff,lambda=100.0;
 double vx[Min_num][Dim]={0.18085, 0.19504, 0.26094, 0.07900, 0.16748, 0.32534, 0.06021 ,               	1, 0, 1, 0, 0, 0, 0       	};  
 	
-double saddle[Dim]={0,0,0,0,0,0}, diag[Dim][Dim]={1.0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,1.0,0,0,0,0,0,0,1.0};
+double saddle[Dim]={0,0,0,0,0,0}, diag[Dim][Dim]={1.0,0,0,0,0,0,0,   0,1.0,0,0,0,0,0,   0,0,1.0,0,0,0,0,   0,0,0,1.0,0,0,0,   0,0,0,0,1.0,0,0,   0,0,0,0,0,1.0,0 , 0,0,0,0,0,0,1};
 double x_max[Dim]={1,0.25,1,0.09,0.27,0.35,0.16},x_min[Dim]={0.0,0.0,0.0,0.0,0.0,0.0,0.0};
 double a1=0.00158;
 
@@ -85,11 +85,11 @@ main()
                 printf("Cannot open file. \n");
                 exit(0);
             }
-            //ÏòÎÄ¼şÖĞĞ´ÈëÊı¾İ 
+            //å‘æ–‡ä»¶ä¸­å†™å…¥æ•°æ® 
             for(i=0;i<M;i++)
             {
 
-			fprintf(fp,"%f	%f	%f	%f	%f	%f	%f	%f\n",1.0*i,ps[fixpoint-1][i][0],ps[fixpoint-1][i][1],ps[fixpoint-1][i][2],ps[fixpoint-1][i][3],ps[fixpoint-1][i][4],ps[fixpoint-1][i][5],ps[fixpoint-1][i][6]);  //ÏòÎÄ¼şÖĞĞ´ÈëÊı¾İ 
+			fprintf(fp,"%f	%f	%f	%f	%f	%f	%f	%f\n",1.0*i,ps[fixpoint-1][i][0],ps[fixpoint-1][i][1],ps[fixpoint-1][i][2],ps[fixpoint-1][i][3],ps[fixpoint-1][i][4],ps[fixpoint-1][i][5],ps[fixpoint-1][i][6]);  //å‘æ–‡ä»¶ä¸­å†™å…¥æ•°æ® 
 
 	        }
 
@@ -149,7 +149,7 @@ void path_mc(double xi[],double xf[],double path[M][Dim])
     printf("shj_straight=%f\n",itgl);
         printf("i	amplitude	t	acceptance_ratio	shj	penalty\n");
 		t_init=t;
-        amplitude=0.01;//¿ÉÒÔĞŞ¸Ä 
+        amplitude=0.01;//å¯ä»¥ä¿®æ”¹ 
 	for(i=1;i<=Steps;i++)
 	{
 		acceptance_num=0;
@@ -476,10 +476,10 @@ double dshj(double xi[],double xf[])
 	for(i=0;i<Dim;i++) dx[i]=xf[i]-xi[i];
 	for(i=0;i<Dim;i++)
 		for(j=0;j<Dim;j++)
-			fdl=fdl+invd[i][j]*fvec[j]*dx[i];//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÉ¢¶ÈÁ¦ 
+			fdl=fdl+invd[i][j]*fvec[j]*dx[i];//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ•£åº¦åŠ› 
 //	ds=dl(invd,xi,xf)*sqrt(vi+e_eff)-fdl/2.0;
 		//ds=dl(invd,xi,xf)*sqrt(vi+e_eff);//-fdl/2.0;
-		ds=dl(invd,xi,xf)*sqrt(vi+e_eff);//-fdl/2.0;  //¿ÉÒÔĞŞ¸ÄµÄµØ·½ 
+		ds=dl(invd,xi,xf)*sqrt(vi+e_eff);//-fdl/2.0;  //å¯ä»¥ä¿®æ”¹çš„åœ°æ–¹ 
 	
     return ds;
 }
