@@ -13,7 +13,7 @@ The associated paper is **Open Access** under **CC BY-NC-ND 4.0**: [https://crea
   
 - For commercial use, contact: reprints@oup.com
 
-**2.If you use this repository or reproduce the results, please cite our paper:**
+**2.Please consider cite our work:**
 
 Wang L, Zhang K, Xu L, et al. Understanding underlying physical mechanism reveals early warning indicators and key elements for adaptive infections disease networks[J]. PNAS nexus, 2024, 3(7): pgae237.
 
@@ -30,18 +30,5 @@ BibTex：
   publisher={Oxford University Press US}
 }
 
-**3.For inquiries related to this repository or the associated publication, please contact the first author or corresponding author:**
 
-**First author**
-
-Name: Linqi Wang 
-
-Email:yc2205566011@163.com
-
-
-**corresponding author**
-
-Name: Jin Wang
-
-Email:jin.wang.1@stonybrook.edu
 
